@@ -5,6 +5,7 @@
 from models import storage
 from models.state import State
 from models.amenity import Amenity
+from models.place import Place
 from flask import Flask, render_template
 app = Flask(__name__)
 
@@ -13,10 +14,13 @@ app = Flask(__name__)
 def hbnb_filters():
     """Render template with states
     """
-    path = '10-hbnb_filters.html'
+    path = '100-hbnb.html'
     states = storage.all(State)
     amenities = storage.all(Amenity)
-    return render_template(path, states=states, amenities=amenities)
+    places = storage.all(Place)
+    return render_template(path, states=states,
+                           amenities=amenities,
+                           places=places)
 
 
 @app.teardown_appcontext
