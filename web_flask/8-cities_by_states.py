@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """ A script that starts a flask web application """
+import sys
+sys.path.append('..')
 from models import storage
 from models.state import State
 from os import environ
