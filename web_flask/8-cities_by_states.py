@@ -30,10 +30,9 @@ def cities_list():
     states = sorted(states, key=lambda k: k.name)
     st_ct = []
     for state in states:
-        st_ct.append([state, sorted(state.cities, key=lambda k: k.name)])
-    return render_template('8-cities_by_states.html',
-                           states=st_ct,
-                           h_1="States")
+        cities = [city for city in state.cities]
+        cities_by_state[state] = cities
+        return render_template('8-cities_by_states.html', cities_by_state=cities_by_state)
 
 
 if __name__ == "__main__":
