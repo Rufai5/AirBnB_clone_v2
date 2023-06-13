@@ -9,6 +9,7 @@ import os
 
 env.hosts = ["54.175.191.156", "54.162.44.239"]
 env.user = "ubuntu"
+env.key_filename = '/home/ubuntu/.ssh/id_rsa'
 
 
 def do_pack():
